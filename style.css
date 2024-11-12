@@ -1,16 +1,22 @@
-/* Algemene stijl voor body */
-body {
+/* Zorg ervoor dat de pagina scrollbaar is */
+html, body {
     font-family: 'Arial', sans-serif;
     background-color: #eaf6e9;
     color: #333;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    overflow-y: auto; /* Zorgt ervoor dat verticaal scrollen altijd mogelijk is */
+}
+
+/* Algemene stijl voor body */
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Start bovenaan om goed te kunnen scrollen */
     padding: 20px;
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -37,6 +43,24 @@ main {
     max-width: 800px;
     text-align: center;
     margin: 20px 0;
+}
+
+/* Info-box styling */
+.info-box {
+    background-color: #f0fff4; /* Lichtgroene achtergrond die opvalt */
+    border: 2px solid #38a169; /* Groene rand om te passen bij de natuurthema */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #2f855a;
+    font-size: 1.1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Zachte schaduw om het vak te laten opvallen */
+}
+
+.info-box p {
+    margin: 0;
+    line-height: 1.5;
 }
 
 /* Inhoud */
