@@ -116,6 +116,19 @@ label {
     color: #444;
 }
 
+/* SLuitknop */
+
+.sluit-knop {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+}
+
 /* Stijlen voor invoervelden en selectievakjes */
 input[type="text"],
 input[type="email"],
