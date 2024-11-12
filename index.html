@@ -3,43 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camping De Groene Weide - Reservering</title>
+    <title>Camping De Groene Weide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welkom bij Camping De Groene Weide!x</h1>
-        <p>Kom tot rust in de natuur en geniet van een ontspannen verblijf.</p>
+        <div class="header-content">
+            <h1>Camping De Groene Weide</h1>
+            <p>Beleef de rust en schoonheid van de natuur</p>
+        </div>
     </header>
-    
-    <section class="content">
-        <h2>Reserveer je verblijf</h2>
-        <p>Klik op de knop hieronder om een reservering te maken.</p>
-        <button id="reserveer-knop">Reserveer Nu</button>
-    </section>
-    
-    <section id="formulier" class="form-popup">
-        <form id="reserveringsformulier">
-            <h2>Reserveringsformulier</h2>
-            <label for="naam">Naam:</label>
-            <input type="text" id="naam" name="naam" required>
-            
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="aantal-personen">Aantal Personen:</label>
-            <input type="number" id="aantal-personen" name="aantal-personen" min="1" required>
-            
-            <label for="aankomst">Aankomstdatum:</label>
-            <input type="date" id="aankomst" name="aankomst" required>
-            
-            <label for="vertrek">Vertrekdatum:</label>
-            <input type="date" id="vertrek" name="vertrek" required>
-            
-            <button type="submit">Verzenden</button>
-            <button type="button" id="annuleer-knop">Annuleren</button>
-        </form>
-    </section>
+
+    <main>
+        <section class="content">
+            <h2>Reserveer je verblijf</h2>
+            <p>Klik op de knop hieronder om een reservering te maken.</p>
+            <button id="reserveer-knop">Reserveer Nu</button>
+        </section>
+
+        <section id="formulier" class="form-popup">
+            <form id="reserveringsformulier">
+                <h2>Reserveringsformulier</h2>
+                
+                <label for="voornaam">Voornaam:</label>
+                <input type="text" id="voornaam" name="voornaam" required>
+                
+                <label for="achternaam">Achternaam:</label>
+                <input type="text" id="achternaam" name="achternaam" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="checkin">Check-in Datum:</label>
+                <input type="date" id="checkin" name="checkin" required>
+                
+                <label for="checkout">Check-out Datum:</label>
+                <input type="date" id="checkout" name="checkout" required>
+                
+                <label for="aantal-personen">Aantal Personen:</label>
+                <input type="number" id="aantal-personen" name="aantal-personen" min="1" required>
+                
+                <label for="accommodatie">Accommodatie Type:</label>
+                <select id="accommodatie" name="accommodatie" required>
+                    <option value="caravan">Caravan</option>
+                    <option value="tent">Tent</option>
+                    <option value="luxe-tent">Luxe Tent</option>
+                </select>
+
+                <button type="submit">Verzenden</button>
+                <button type="button" id="annuleer-knop">Annuleren</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Camping De Groene Weide. Alle rechten voorbehouden.</p>
+        <p>Contact: info@degroeneweide.nl | Telefoon: 012-3456789</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
