@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserveringssysteem Camping De Groene Weidegit </title>
+    <title>Reserveringssysteem</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
         <h1>Maak een Reservering</h1>
+        
+        <!-- Formulier -->
         <form id="reservationForm">
             <label for="name">Naam:</label>
             <input type="text" id="name" required>
@@ -21,15 +23,26 @@
             
             <label for="persons">Aantal personen:</label>
             <input type="number" id="persons" min="1" max="20" required>
+
+            <label for="sanitary">Sanitaire voorzieningen:</label>
+            <select id="sanitary" required>
+                <option value="Eigen voorzieningen">Eigen sanitaire voorzieningen</option>
+                <option value="Camping voorzieningen">Sanitair van de camping</option>
+            </select>
             
-            <label for="date">Datum:</label>
-            <input type="date" id="date" required>
+            <label for="checkin">Check-in datum:</label>
+            <input type="date" id="checkin" required>
+            
+            <label for="checkout">Check-out datum:</label>
+            <input type="date" id="checkout" required>
             
             <button type="submit">Reserveer</button>
         </form>
+        
+        <!-- Bevestigingsbericht -->
         <div id="confirmationMessage" class="hidden">
             <p>Bedankt voor je reservering!</p>
-            <p id="reservationDetails"></p>
+            <button id="backToForm">Terug naar formulier</button>
         </div>
     </div>
     

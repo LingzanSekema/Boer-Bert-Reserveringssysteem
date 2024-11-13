@@ -34,9 +34,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="date"],
-input[type="tel"],
-input[type="number"] {
+input[type="number"],
+input[type="date"] {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -45,10 +44,19 @@ input[type="number"] {
     border-radius: 4px;
 }
 
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
 button {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -66,5 +74,5 @@ button:hover {
 }
 
 #confirmationMessage p {
-    margin: 5px 0;
+    margin: 20px 0;
 }
