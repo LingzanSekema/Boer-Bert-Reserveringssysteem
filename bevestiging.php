@@ -1,3 +1,12 @@
+<?php
+
+$accommodation_types = [
+    "caravan" => "Caravan",
+    "tent" => "Tent",
+    "luxury_tent" => "Luxury tent"
+];
+
+?>
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -27,7 +36,7 @@
                 <li><strong>Check-in Datum:</strong> <?php echo htmlspecialchars($_GET['check_in']); ?></li>
                 <li><strong>Check-out Datum:</strong> <?php echo htmlspecialchars($_GET['check_out']); ?></li>
                 <li><strong>Aantal Personen:</strong> <?php echo htmlspecialchars($_GET['guest_count']); ?></li>
-                <li><strong>Accommodatie Type:</strong> <?php echo ($_GET['accommodation_type']); ?></li>
+                <li><strong>Accommodatie Type:</strong> <?php echo ($accommodation_types[$_GET['accommodation_type']]); ?></li>
             </ul>
             <p>We kijken ernaar uit je te verwelkomen op Camping De Groene Weide!</p>
         </section>
