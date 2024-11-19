@@ -30,11 +30,11 @@ reservationForm.addEventListener("submit", function(event) {
     const sanitary = document.getElementById("sanitary").value;
     
     // Valideer het telefoonnummer (moet beginnen met 06 en precies 10 cijfers lang zijn)
-    const phoneRegex = /^06\d{8}$/;
-    if (!phoneRegex.test(phone)) {
-        alert("Voer een geldig Nederlands mobiel nummer in dat begint met 06 en 10 cijfers bevat.");
-        return;
-    }
+    // const phoneRegex = /^06\d{8}$/;
+    // if (!phoneRegex.test(phone)) {
+    //     alert("Voer een geldig Nederlands mobiel nummer in dat begint met 06 en 10 cijfers bevat.");
+    //     return;
+    // }
     
     // Controleer of de check-out datum na de check-in datum ligt
     if (new Date(checkout) <= new Date(checkin)) {
@@ -59,10 +59,10 @@ backToFormButton.addEventListener("click", function() {
 });
     
 // Zorg ervoor dat alleen cijfers worden ingevoerd in het telefoonnummerveld
-document.getElementById("phone").addEventListener("input", function(event) {
-    const input = event.target.value;
-    event.target.value = input.replace(/[^0-9]/g, ''); // Vervang niet-cijfertekens door lege tekens
-});
+// document.getElementById("phone").addEventListener("input", function(event) {
+//     const input = event.target.value;
+//     event.target.value = input.replace(/[^0-9]/g, ''); // Vervang niet-cijfertekens door lege tekens
+// });
 
 // Stel de minimale datum in bij het laden van de pagina
 setMinDate();
