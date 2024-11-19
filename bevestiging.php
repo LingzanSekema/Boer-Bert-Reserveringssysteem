@@ -32,7 +32,7 @@ $accommodation_types = [
                 <li><strong>Voornaam:</strong> <?php echo htmlspecialchars($_GET['firstname']); ?></li>
                 <li><strong>Achternaam:</strong> <?php echo htmlspecialchars($_GET['lastname']); ?></li>
                 <li><strong>Telefoonnummer:</strong> <?php echo htmlspecialchars($_GET['phone']); ?></li>
-                <li><strong>E-mail:</strong> <?php echo htmlspecialchars($_GET['email']); ?></li>
+                <li><strong>E-mail:</strong> 
                 <li><strong>Check-in Datum:</strong> <?php echo htmlspecialchars($_GET['check_in']); ?></li>
                 <li><strong>Check-out Datum:</strong> <?php echo htmlspecialchars($_GET['check_out']); ?></li>
                 <li><strong>Aantal Personen:</strong> <?php echo htmlspecialchars($_GET['guest_count']); ?></li>
