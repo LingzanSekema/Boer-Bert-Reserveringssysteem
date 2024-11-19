@@ -26,7 +26,7 @@ $accommodation_types = [
 
     <main>
         <section class="content">
-            <h2>Bedankt voor je reservering!</h2>
+            <h2>Bedankt voor uw reservering!</h2>
             <p>Hier zijn je gegevens:</p>
             <ul>
                 <li><strong>Voornaam:</strong> <?php echo htmlspecialchars($_GET['firstname']); ?></li>
