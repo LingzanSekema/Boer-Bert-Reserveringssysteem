@@ -1,11 +1,54 @@
+<?php
+require "database.php";
+
+if (isset($_POST['submit'])) {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $check_in = $_POST['check_in'];
+    $check_out = $_POST['check_out'];
+    $guest_count = $_POST['guest_count'];
+    $accommodation_type = $_POST['accommodation_type'];
+
+    $stmt = $conn->prepare("INSERT INTO reservering (firstname, lastname, phone, email, check_in, check_out, guest_count, accommodation_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssis", $firstname, $lastname, $phone, $email, $check_in, $check_out, $guest_count, $accommodation_type);
+
+    if ($stmt->execute()) {
+        $stmt->close();
+        $conn->close();
+
+        // Doorsturen naar bevestigingspagina met gegevens
+        header("Location: bevestiging.php?firstname=" . ($firstname) .
+            "&lastname=" . ($lastname) .
+            "&phone=" . ($phone) .
+            "&email=" . ($email) .
+            "&check_in=" . ($check_in) .
+            "&check_out=" . ($check_out) .
+            "&guest_count=" . ($guest_count) .
+            "&accommodation_type=" . ($accommodation_type));
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camping De Groene Weide</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -13,7 +56,7 @@
             <p>Beleef de rust en schoonheid van de natuur, bij de boer</p>
         </div>
     </header>
-    
+
     <main>
         <section class="content">
             <h2>Reserveer je verblijf</h2>
@@ -21,8 +64,8 @@
             <br>
             <div class="info-box">
                 <p>U hoeft pas te betalen als u bij de receptie bent.<br>
-                Openbare doucheruimtes en toiletten zijn inbegrepen bij de prijs.</p>
-            </div>    
+                    Openbare doucheruimtes en toiletten zijn inbegrepen bij de prijs.</p>
+            </div>
             <button id="reserveer-knop">Reserveer Nu</button>
         </section>
 
@@ -71,4 +114,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
