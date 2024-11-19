@@ -70,11 +70,6 @@ reservationForm.addEventListener("submit", function (event) {
         return;
     }
 
-    // Sluit het formulier en ververs de pagina na succesvolle verzending
-    formulierPopup.style.display = "none";
-    setTimeout(() => {
-        location.reload(); // Ververs de pagina na een korte pauze
-    }, 100);
 });
 
 // Toon het formulier bij klikken op "Reserveer Nu"
