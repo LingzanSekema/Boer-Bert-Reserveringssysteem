@@ -1,0 +1,149 @@
+/* Algemene stijl voor body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaf6e9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #2f855a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.2em;
+}
+
+/* Hoofdsectie */
+main {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Inhoud */
+.content h2 {
+    color: #2f855a;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #38a169;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2f855a;
+}
+
+/* Popup-styling */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+form h2 {
+    color: #2f855a;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1em;
+    color: #444;
+}
+
+/* Stijlen voor invoervelden en selectievakjes */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    text-align: center; /* Centreert tekst in het midden van invoervelden */
+}
+
+/* Centreert de opties in het selectievak */
+select {
+    text-align-last: center;
+}
+
+#annuleer-knop {
+    background-color: #e53e3e;
+    margin-top: 10px;
+}
+
+#annuleer-knop:hover {
+    background-color: #c53030;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #2f855a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.sluit-knop {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+}
