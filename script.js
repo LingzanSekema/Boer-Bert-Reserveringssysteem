@@ -3,8 +3,8 @@ const reservationForm = document.getElementById("reserveringsformulier");
 const reserveerKnop = document.getElementById("reserveer-knop");
 const formulierPopup = document.getElementById("formulier");
 const sluitKnop = document.getElementById("sluit-knop");
-const checkinInput = document.getElementById("checkin");
-const checkoutInput = document.getElementById("checkout");
+const checkinInput = document.getElementById("check_in");
+const checkoutInput = document.getElementById("check_out");
 const phoneInput = document.getElementById("phone");
 
 // Controleer of alle benodigde elementen bestaan
