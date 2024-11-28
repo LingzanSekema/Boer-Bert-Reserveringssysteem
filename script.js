@@ -94,5 +94,11 @@ reserveerKnop.addEventListener("click", function () {
     setMinDate(); // Stel de juiste minimale datums in bij openen
 });
 
+// Sluit het formulier 
+document.getElementById('sluit-knop').addEventListener('click', function() {
+    document.getElementById('formulier').style.display = 'none';
+});
+
+
 // Stel de minimale datum in bij het laden van de pagina
 setMinDate();
