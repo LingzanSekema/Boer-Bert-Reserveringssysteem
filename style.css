@@ -156,6 +156,7 @@ button:hover {
     background-color: #2f855a;
 }
 
+
 /* Footer */
 footer {
     width: 100%;
@@ -173,5 +174,4 @@ footer {
 footer p {
     position: relative;
     z-index: 2; /* Zorg ervoor dat de tekst boven andere elementen komt */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid */
-}
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid *
