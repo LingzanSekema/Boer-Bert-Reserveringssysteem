@@ -33,25 +33,31 @@ body {
 }
 
 .overzicht-reservering {
+    margin: 0 auto;
     text-align: left;
+    width: 100%;
+    max-width: 500px;
     padding: 10px;
 }
 
+.overzicht-reservering table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
 .overzicht-reservering th {
     width: 40%;
     font-weight: bold;
     color: #555;
-}
-
-tr, td, th {
-    border-bottom: 1px solid #eee;
-    padding: 15px;
+    text-align: left;
 }
 
 .overzicht-reservering td {
     color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
+
 .Wekijkenernauit {
     margin-top: 20px;
     font-size: 15px;
