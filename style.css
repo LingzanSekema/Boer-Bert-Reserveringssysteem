@@ -20,6 +20,43 @@ body {
     min-height: 100vh;
 }
 
+/* Navigatiebalk styling */
+nav {
+    background-color: #2f855a;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    height: 80px;
+}
+
+.navheadercontent {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigatie menu */
+.navmenu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Zorgt dat het menu in het midden blijft */
+    padding: 0;
+    margin: 0;
+}
+
+.navmenu li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
 /* Header */
 header {
     width: 100%;
@@ -156,7 +193,6 @@ button:hover {
     background-color: #2f855a;
 }
 
-
 /* Footer */
 footer {
     width: 100%;
@@ -174,4 +210,5 @@ footer {
 footer p {
     position: relative;
     z-index: 2; /* Zorg ervoor dat de tekst boven andere elementen komt */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid *
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid */
+}
