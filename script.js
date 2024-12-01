@@ -21,6 +21,24 @@ checkinInput.addEventListener("change", function () {
     checkoutInput.min = checkinDate.toISOString().split("T")[0];
 });
 
+// Instellen van Flatpickr voor Check-in en Check-out velden
+flatpickr("#check_in", {
+    dateFormat: "Y-m-d", // Stel de datumweergave in
+    minDate: "today", // De eerste selecteerbare datum is vandaag
+    onChange: function (selectedDates, dateStr, instance) {
+        // Update de minimale check-out datum op basis van de geselecteerde check-in datum
+        const checkOutField = document.querySelector("#check_out");
+        const nextDay = new Date(selectedDates[0]);
+        nextDay.setDate(nextDay.getDate() + 1); // Voeg 1 dag toe
+        checkOutField._flatpickr.set("minDate", nextDay); // Update Flatpickr-instelling
+    },
+});
+
+flatpickr("#check_out", {
+    dateFormat: "Y-m-d", // Stel de datumweergave in
+    minDate: "today", // Start altijd vanaf vandaag
+});
+
 // Controleer of het telefoonnummer een geldig Nederlands nummer is
 function isValidDutchPhoneNumber(phone) {
     // Telefoonnummer moet beginnen met '06'

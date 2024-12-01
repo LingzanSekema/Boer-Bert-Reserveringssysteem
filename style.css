@@ -116,14 +116,15 @@ main {
     right: 15px; /* Plaats rechts */
 }
 
-/* Formulier en invoervelden */
+/* Labels voor invoervelden */
 form label {
     display: block;
     margin-top: 15px;
-    font-size: 1em;
+    font-size: 1em; /* Standaard grootte van de labeltekst */
     color: #444;
 }
 
+/* Invoervelden */
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -134,9 +135,23 @@ select {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1em; /* Standaard grootte van de invoertekst */
     box-sizing: border-box;
     text-align: center;
+}
+
+/* Placeholder-styling */
+input::placeholder {
+    color: #aaa; /* Lichtere tint grijs */
+    font-size: 0.9em; /* Maak de placeholder-tekst iets kleiner */
+    font-style: italic; /* Optioneel: cursieve tekst */
+}
+
+/* Styling voor select-veld placeholder */
+select:placeholder-shown {
+    color: #aaa;
+    font-size: 0.9em;
+    font-style: italic;
 }
 
 /* Knoppen */
