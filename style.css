@@ -20,41 +20,38 @@ body {
     min-height: 100vh;
 }
 
-/* Navigatiebalk styling */
 nav {
-    background-color: #2f855a;
-    color: white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
+    background: #2f855a;
     height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    user-select: none;
+    display: flex; /* Added to align items horizontally */
+    align-items: center; /* Align items in the center vertically */
+    padding: 0 20px; /* Added padding for better appearance */
+    box-sizing: border-box;
 }
 
-.navheadercontent {
-    text-decoration: none;
-    color: white;
-}
-
-/* Navigatie menu */
-.navmenu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1; /* Zorgt dat het menu in het midden blijft */
-    padding: 0;
+nav ul {
+    display: flex; /* Set display to flex to arrange items horizontally */
     margin: 0;
+    padding: 0;
+    list-style: none; /* Remove bullets */
 }
 
-.navmenu li a {
+nav ul li {
+    margin: 0 10px; /* Adjust margin to add spacing between items */
+}
+
+nav ul li a {
     color: white;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 /* Header */
