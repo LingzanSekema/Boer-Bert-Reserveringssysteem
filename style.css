@@ -1,7 +1,6 @@
 /* Zorg ervoor dat de pagina geen horizontale scroll heeft */
 html, body {
     font-family: 'Arial', sans-serif;
-    background-color: #eaf6e9;
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,6 +8,16 @@ html, body {
     height: 100%;
     box-sizing: border-box;
     overflow-x: hidden; /* Voorkom horizontaal scrollen */
+}
+
+nav {
+    background: #2f855a;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    user-select: none;
 }
 
 /* Algemene body instellingen */
@@ -174,4 +183,5 @@ footer {
 footer p {
     position: relative;
     z-index: 2; /* Zorg ervoor dat de tekst boven andere elementen komt */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid *
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid */
+}
