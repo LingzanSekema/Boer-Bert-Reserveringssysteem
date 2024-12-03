@@ -7,6 +7,20 @@ const checkoutInput = document.getElementById("check_out");
 const phoneInput = document.getElementById("phone");
 const guestCountInput = document.getElementById("guest_count");
 
+// Uitklapbare sectie toggle
+const toggleInfoButton = document.querySelector(".toggle-info");
+const infoContent = document.querySelector(".info-content");
+
+toggleInfoButton.addEventListener("click", function () {
+    if (infoContent.style.maxHeight) {
+        infoContent.style.maxHeight = null; // Sluit de sectie
+        toggleInfoButton.textContent = "Meer informatie";
+    } else {
+        infoContent.style.maxHeight = infoContent.scrollHeight + "px"; // Open de sectie
+        toggleInfoButton.textContent = "Minder informatie";
+    }
+});
+
 // Stel de minimale datums in voor check-in en check-out velden
 function setMinDate() {
     const today = new Date().toISOString().split("T")[0];
@@ -19,6 +33,24 @@ checkinInput.addEventListener("change", function () {
     const checkinDate = new Date(checkinInput.value);
     checkinDate.setDate(checkinDate.getDate() + 1); // Minimaal één dag na check-in
     checkoutInput.min = checkinDate.toISOString().split("T")[0];
+});
+
+// Instellen van Flatpickr voor Check-in en Check-out velden
+flatpickr("#check_in", {
+    dateFormat: "Y-m-d", // Stel de datumweergave in
+    minDate: "today", // De eerste selecteerbare datum is vandaag
+    onChange: function (selectedDates, dateStr, instance) {
+        // Update de minimale check-out datum op basis van de geselecteerde check-in datum
+        const checkOutField = document.querySelector("#check_out");
+        const nextDay = new Date(selectedDates[0]);
+        nextDay.setDate(nextDay.getDate() + 1); // Voeg 1 dag toe
+        checkOutField._flatpickr.set("minDate", nextDay); // Update Flatpickr-instelling
+    },
+});
+
+flatpickr("#check_out", {
+    dateFormat: "Y-m-d", // Stel de datumweergave in
+    minDate: "today", // Start altijd vanaf vandaag
 });
 
 // Controleer of het telefoonnummer een geldig Nederlands nummer is
@@ -52,13 +84,16 @@ phoneInput.addEventListener("input", function () {
     }
 });
 
-// Controleer of het aantal personen maximaal 8 is
+// Zorg dat het aantal personen tussen 1 en 8 blijft
 guestCountInput.addEventListener("input", function () {
-    if (guestCountInput.value > 8) {
-        alert("Het maximale aantal personen is 8.");
-        guestCountInput.value = 8; // Stel het maximaal toegestane aantal in
-    } else if (guestCountInput.value < 1) {
-        guestCountInput.value = 1; // Minimale waarde van 1 persoon
+    const maxGuests = 8;
+    const minGuests = 1;
+    
+    // Beperk de invoerwaarde tot de grenzen
+    if (guestCountInput.value > maxGuests) {
+        guestCountInput.value = maxGuests;
+    } else if (guestCountInput.value < minGuests) {
+        guestCountInput.value = minGuests;
     }
 });
 
@@ -93,6 +128,7 @@ reserveerKnop.addEventListener("click", function () {
     formulierPopup.style.display = "block";
     setMinDate(); // Stel de juiste minimale datums in bij openen
 });
+
 
 // Sluit formulier bij klikken op het kruisje
 document.getElementById('sluit-knop').addEventListener('click', function() {
