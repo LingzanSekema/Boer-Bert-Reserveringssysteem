@@ -39,17 +39,16 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="check_in">Check-in Datum:</label>
-                <input type="text" id="check_in" name="check_in" placeholder="Selecteer een check-in datum" readonly required>
-            
+                <input type="date" id="check_in" name="check_in" required>
+
                 <label for="check_out">Check-out Datum:</label>
-                <input type="text" id="check_out" name="check_out" placeholder="Selecteer een check-out datum" readonly required>
-            
+                <input type="date" id="check_out" name="check_out" required>
+
                 <label for="guest_count">Aantal Personen:</label>
-                <input type="number" id="guest_count" name="guest_count" min="1" max="8" placeholder="Max. 8 personen" required>
-            
+                <input type="number" id="guest_count" name="guest_count" min="1" required>
+
                 <label for="accommodation_type">Accommodatie Type:</label>
                 <select id="accommodation_type" name="accommodation_type" required>
-                    <option value="" disabled selected>Selecteer een optie</option>
                     <option value="caravan">Caravan</option>
                     <option value="tent">Tent</option>
                     <option value="luxury_tent">Luxe Tent</option>
