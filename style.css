@@ -1,5 +1,6 @@
 html, body {
     font-family: 'Arial', sans-serif;
+    background-color: #eaf6e9;
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,20 +10,6 @@ html, body {
     overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-nav {
-    background: #2f855a;
-    height: 80px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    user-select: none;
-}
-
-/* Algemene body instellingen */
-=======
->>>>>>> b5bf1e8a72c22390ef24ae899d244f2f3ff9db60
 body {
     display: flex;
     flex-direction: column;
@@ -235,13 +222,3 @@ footer {
     box-sizing: border-box;
     margin-top: auto;
 }
-<<<<<<< HEAD
-
-/* Voeg een subtiele schaduw toe aan de tekst in de footer voor betere leesbaarheid */
-footer p {
-    position: relative;
-    z-index: 2; /* Zorg ervoor dat de tekst boven andere elementen komt */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid */
-}
-=======
->>>>>>> b5bf1e8a72c22390ef24ae899d244f2f3ff9db60
