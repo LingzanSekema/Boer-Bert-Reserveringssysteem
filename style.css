@@ -1,3 +1,4 @@
+/* Zorg ervoor dat de pagina geen horizontale scroll heeft */
 html, body {
     font-family: 'Arial', sans-serif;
     background-color: #eaf6e9;
@@ -7,24 +8,68 @@ html, body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Voorkom horizontaal scrollen */
 }
 
+/* Algemene body instellingen */
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: center; /* Inhoud centreren */
+    justify-content: flex-start; /* Inhoud bovenaan beginnen */
     min-height: 100vh;
 }
 
+/* Header */
+header {
+    width: 100%;
+    background-image: url(images/camping1.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay om tekst leesbaar te maken */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Donkere overlay */
+    z-index: 1; /* Zorgt ervoor dat de overlay achter de tekst komt */
+}
+
+/* Tekst in de header */
+header .header-content {
+    position: relative;
+    z-index: 2; /* Zorgt ervoor dat de tekst boven de overlay wordt weergegeven */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Voeg een subtiele schaduw toe aan de tekst */
+}
+
+/* Main-inhoud */
 main {
     width: 100%;
+    max-width: 800px;
     text-align: center;
+    margin-top: 40px; /* Ruimte onder de header */
+    margin-bottom: 40px;
     box-sizing: border-box;
 }
 
-/* Info box styling */
+/* Info-box styling */
 .info-box {
     background-color: #f0fff4;
     border: 2px solid #38a169;
@@ -37,7 +82,12 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Popup form styling */
+.info-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Reserveringsformulier popup */
 .form-popup {
     display: none;
     position: fixed;
@@ -52,20 +102,29 @@ main {
     max-width: 90vw;
     max-height: 80vh;
     overflow-y: auto;
-    z-index: 20;
+    z-index: 100;
 }
 
+/* Sluitknop (kruisje) voor het formulier */
 .sluit-knop {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    position: absolute; /* Absolute positie binnen de popup */
+    top: 10px; /* Plaats bovenaan */
+    right: 15px; /* Plaats rechts */
 }
 
-/* Input field styling */
+/* Labels voor invoervelden */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1em; /* Standaard grootte van de labeltekst */
+    color: #444;
+}
+
+/* Invoervelden */
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -76,11 +135,26 @@ select {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1em; /* Standaard grootte van de invoertekst */
+    box-sizing: border-box;
     text-align: center;
 }
 
-/* Button styling */
+/* Placeholder-styling */
+input::placeholder {
+    color: #aaa; /* Lichtere tint grijs */
+    font-size: 0.9em; /* Maak de placeholder-tekst iets kleiner */
+    font-style: italic; /* Optioneel: cursieve tekst */
+}
+
+/* Styling voor select-veld placeholder */
+select:placeholder-shown {
+    color: #aaa;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Knoppen */
 button {
     background-color: #38a169;
     color: white;
@@ -97,15 +171,23 @@ button:hover {
     background-color: #2f855a;
 }
 
+
 /* Footer */
 footer {
     width: 100%;
-    background-color: #2f855a;
+    background-color: #2f855a; /* De simpele groene achtergrond van de footer */
     color: white;
     padding: 15px;
     text-align: center;
     font-size: 0.9em;
     position: relative;
     box-sizing: border-box;
-    margin-top: auto;
+    margin-top: auto; /* Duwt de footer naar beneden */
+}
+
+/* Voeg een subtiele schaduw toe aan de tekst in de footer voor betere leesbaarheid */
+footer p {
+    position: relative;
+    z-index: 2; /* Zorg ervoor dat de tekst boven andere elementen komt */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Zwarte schaduw voor betere zichtbaarheid */
 }
