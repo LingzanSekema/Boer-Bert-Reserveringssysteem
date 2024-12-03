@@ -1,5 +1,3 @@
-bevestiging.php
-
 <?php
 
 $accommodation_types = [
