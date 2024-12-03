@@ -68,3 +68,12 @@ p {
     font-size: 1.1em;
     color: #2f855a;
 }
+
+.terugnaarhomepagina {
+    padding: 15px;
+    background-color: #2f855a;
+    border: 2px #38a169;
+    border-radius: 20px;
+    color: white;
+
+}
