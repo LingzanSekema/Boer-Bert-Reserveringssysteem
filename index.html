@@ -5,72 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camping De Groene Weide</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1><span class="logo">🌿</span> Camping De Groene Weide</h1>
-            <p>Beleef de rust en schoonheid van de natuur, bij de boer</p>
-        </div>
-    </header>
-    
+
+    <nav>
+        <ul>
+            <li><a class="logo-knop" href="index.html">🌿</a></li>
+            <li><a class="navnormaletekst" href="index.html">Home</a></li>
+            <li><a class="navnormaletekst" href="test.html">Over</a></li>
+            <li><a class="navnormaletekst" href="test.html">Faciliteiten</a></li>
+            <li><a class="navnormaletekst" href="test.html">Plaatsen</a></li>
+            <li><a class="reserveren-knop" href="test.html">Reserveren</a></li>
+        </ul>
+    </nav>
     <main>
+        <div class="header">
+            <h1>Camping de Groene Weide</h1>
+        </div>
+        
+
         <section class="content">
             <h2>Reserveer je verblijf</h2>
             <p>Klik op de knop hieronder om een reservering te maken.</p>
             <br>
             <div class="info-box">
-                <button class="toggle-info">Meer informatie</button>
-                <div class="info-content">
-                    <ul>
-                        <li>U hoeft pas te betalen als u bij de receptie bent.</li>
-                        <li>Doucheruimtes en toiletten zijn inbegrepen bij de prijs.</li>
-                        <li>Er kunnen max. 8 personen per reservering ingeschreven worden.
-                        Voor grotere reserveringen moet u bellen naar de receptie. Contactinformatie staat onderaan de pagina.</li>
-                    </u1>
-                </div>
+                <p>U hoeft pas te betalen als u bij de receptie bent.<br>
+                Openbare doucheruimtes en toiletten zijn inbegrepen bij de prijs.</p>
             </div>    
-            <button id="reserveer-knop" class="reserveer-button">Reserveer Nu</button>
+            <button id="reserveer-knop">Reserveer Nu</button>
         </section>
 
         <section id="formulier" class="form-popup">
             <form action="reservering.php" method="POST" id="reserveringsformulier">
                 <span id="sluit-knop" class="sluit-knop">&times;</span>
                 <h2>Reserveringsformulier</h2>
-            
+
                 <label for="firstname">Voornaam:</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Bijv. Jan" required>
-            
+                <input type="text" id="firstname" name="firstname" required>
+
                 <label for="lastname">Achternaam:</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Bijv. Jansen" required>
-            
+                <input type="text" id="lastname" name="lastname" required>
+
                 <label for="phone">Telefoonnummer:</label>
-                <input type="text" id="phone" name="phone" placeholder="Bijv. 0612345678" required>
-            
+                <input type="text" id="phone" name="phone" required>
+
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Bijv. jan.jansen@email.com" required>
-            
+                <input type="email" id="email" name="email" required>
+
                 <label for="check_in">Check-in Datum:</label>
-                <input type="text" id="check_in" name="check_in" placeholder="Selecteer een check-in datum" readonly required>
-            
+                <input type="date" id="check_in" name="check_in" required>
+
                 <label for="check_out">Check-out Datum:</label>
-                <input type="text" id="check_out" name="check_out" placeholder="Selecteer een check-out datum" readonly required>
-            
+                <input type="date" id="check_out" name="check_out" required>
+
                 <label for="guest_count">Aantal Personen:</label>
-                <input type="number" id="guest_count" name="guest_count" min="1" max="8" placeholder="Max. 8 personen" required>
-            
+                <input type="number" id="guest_count" name="guest_count" min="1" required>
+
                 <label for="accommodation_type">Accommodatie Type:</label>
                 <select id="accommodation_type" name="accommodation_type" required>
-                    <option value="" disabled selected>Selecteer een optie</option>
                     <option value="caravan">Caravan</option>
                     <option value="tent">Tent</option>
                     <option value="luxury_tent">Luxe Tent</option>
                 </select>
-            
+
                 <button type="submit" name="submit">Verzenden</button>
-            </form>            
+            </form>
         </section>
     </main>
 
