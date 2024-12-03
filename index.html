@@ -22,10 +22,17 @@
             <p>Klik op de knop hieronder om een reservering te maken.</p>
             <br>
             <div class="info-box">
-                <p>U hoeft pas te betalen als u bij de receptie bent.<br>
-                Openbare doucheruimtes en toiletten zijn inbegrepen bij de prijs.</p>
+                <button class="toggle-info">Meer informatie</button>
+                <div class="info-content">
+                    <ul>
+                        <li>U hoeft pas te betalen als u bij de receptie bent.</li>
+                        <li>Doucheruimtes en toiletten zijn inbegrepen bij de prijs.</li>
+                        <li>Er kunnen max. 8 personen per reservering ingeschreven worden.
+                        Voor grotere reserveringen moet u bellen naar de receptie. Contactinformatie staat onderaan de pagina.</li>
+                    </u1>
+                </div>
             </div>    
-            <button id="reserveer-knop">Reserveer Nu</button>
+            <button id="reserveer-knop" class="reserveer-button">Reserveer Nu</button>
         </section>
 
         <section id="formulier" class="form-popup">
@@ -46,17 +53,17 @@
                 <input type="email" id="email" name="email" placeholder="Bijv. jan.jansen@email.com" required>
             
                 <label for="check_in">Check-in Datum:</label>
-                <input type="text" id="check_in" name="check_in" placeholder="Selecteer een datum" readonly required>
+                <input type="text" id="check_in" name="check_in" placeholder="Selecteer een check-in datum" readonly required>
             
                 <label for="check_out">Check-out Datum:</label>
-                <input type="text" id="check_out" name="check_out" placeholder="Selecteer een datum" readonly required>
+                <input type="text" id="check_out" name="check_out" placeholder="Selecteer een check-out datum" readonly required>
             
                 <label for="guest_count">Aantal Personen:</label>
-                <input type="number" id="guest_count" name="guest_count" min="1" placeholder="Bijv. 2" required>
+                <input type="number" id="guest_count" name="guest_count" min="1" max="8" placeholder="Max. 8 personen" required>
             
                 <label for="accommodation_type">Accommodatie Type:</label>
                 <select id="accommodation_type" name="accommodation_type" required>
-                    <option value="" disabled selected>Kies een optie</option>
+                    <option value="" disabled selected>Selecteer een optie</option>
                     <option value="caravan">Caravan</option>
                     <option value="tent">Tent</option>
                     <option value="luxury_tent">Luxe Tent</option>

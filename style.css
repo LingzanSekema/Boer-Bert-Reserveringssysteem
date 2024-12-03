@@ -69,6 +69,65 @@ main {
     box-sizing: border-box;
 }
 
+/* Uitklapbare sectie styling */
+.info-box {
+    background-color: #f0fff4;
+    border: 2px solid #38a169;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #2f855a;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.info-box .toggle-info {
+    background-color: #38a169;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.info-box .toggle-info:hover {
+    background-color: #2f855a;
+}
+
+.info-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Grote en aantrekkelijke knop "Reserveer Nu" */
+.reserveer-button {
+    background-color: #38a169;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.reserveer-button:hover {
+    background-color: #2f855a;
+    transform: scale(1.05);
+}
+
 /* Info-box styling */
 .info-box {
     background-color: #f0fff4;
@@ -78,13 +137,48 @@ main {
     margin-bottom: 20px;
     color: #2f855a;
     font-size: 1.1em;
-    text-align: center;
+    text-align: center; /* Centraal uitlijnen van de tekst */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Verticale layout */
+    align-items: center; /* Horizontaal centreren */
+    justify-content: center; /* Verticaal centreren */
+}
+
+/* Lijst in het infoblok */
+.info-content ul {
+    list-style-type: disc; /* Toon opsommingstekens */
+    padding-left: 0; /* Geen extra ruimte aan de linkerkant */
+    margin: 10px 0;
+    text-align: center; /* Lijsttekst centreren */
+    color: #2f855a; /* Groene tekstkleur consistent met het thema */
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Lijstitems */
+.info-content ul li {
+    margin-bottom: 8px; /* Ruimte tussen items */
 }
 
 .info-box p {
     margin: 0;
     line-height: 1.5;
+}
+
+/* Styling van de lijst in het infoblok */
+.info-content ul {
+    list-style-type: disc; /* Toon opsommingstekens */
+    padding-left: 20px; /* Ruimte tussen de tekst en de rand van het blok */
+    margin: 10px 0;
+    text-align: left; /* Lijst links uitlijnen */
+    color: #2f855a; /* Groene tekstkleur consistent met het thema */
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.info-content ul li {
+    margin-bottom: 8px; /* Ruimte tussen items */
 }
 
 /* Reserveringsformulier popup */
