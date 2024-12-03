@@ -70,10 +70,16 @@ p {
 }
 
 .terugnaarhomepagina {
-    padding: 15px;
+    padding: 10px 15px;
     background-color: #2f855a;
-    border: 2px #38a169;
+    border: 2px solid #2f855a;
     border-radius: 20px;
     color: white;
+    text-decoration: none;
+    display: inline-block;
+}
 
+.terugnaarhomepagina:hover {
+    background-color: white;
+    color: #2f855a;
 }

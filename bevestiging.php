@@ -60,10 +60,8 @@ $accommodation_types = [
             </div>
 
             <p class="Wekijkenernauit">We kijken ernaar uit om u te verwelkomen op Camping De Groene Weide!</p>
-
-            <button class="terugnaarhomepagina">
-                <a href="index.html">Terug naar de homepagina</a>
-            </button>    
+            <a href="index.html" class="terugnaarhomepagina">Terug naar de homepagina</a>
+    
 
         </div>
     </div>
