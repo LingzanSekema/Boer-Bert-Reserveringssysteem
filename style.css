@@ -25,6 +25,8 @@ main {
 }
 
 /* Info box styling */
+
+/* Info-box styling */
 .info-box {
     background-color: #f0fff4;
     border: 2px solid #38a169;
@@ -34,10 +36,19 @@ main {
     color: #2f855a;
     font-size: 1.1em;
     text-align: center;
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Popup form styling */
+}
+
+.info-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Reserveringsformulier popup */
 .form-popup {
     display: none;
     position: fixed;

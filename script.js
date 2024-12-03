@@ -7,20 +7,6 @@ const checkoutInput = document.getElementById("check_out");
 const phoneInput = document.getElementById("phone");
 const guestCountInput = document.getElementById("guest_count");
 
-// Uitklapbare sectie toggle
-const toggleInfoButton = document.querySelector(".toggle-info");
-const infoContent = document.querySelector(".info-content");
-
-toggleInfoButton.addEventListener("click", function () {
-    if (infoContent.style.maxHeight) {
-        infoContent.style.maxHeight = null; // Sluit de sectie
-        toggleInfoButton.textContent = "Meer informatie";
-    } else {
-        infoContent.style.maxHeight = infoContent.scrollHeight + "px"; // Open de sectie
-        toggleInfoButton.textContent = "Minder informatie";
-    }
-});
-
 // Stel de minimale datums in voor check-in en check-out velden
 function setMinDate() {
     const today = new Date().toISOString().split("T")[0];
@@ -84,16 +70,13 @@ phoneInput.addEventListener("input", function () {
     }
 });
 
-// Zorg dat het aantal personen tussen 1 en 8 blijft
+// Controleer of het aantal personen maximaal 8 is
 guestCountInput.addEventListener("input", function () {
-    const maxGuests = 8;
-    const minGuests = 1;
-    
-    // Beperk de invoerwaarde tot de grenzen
-    if (guestCountInput.value > maxGuests) {
-        guestCountInput.value = maxGuests;
-    } else if (guestCountInput.value < minGuests) {
-        guestCountInput.value = minGuests;
+    if (guestCountInput.value > 8) {
+        alert("Het maximale aantal personen is 8.");
+        guestCountInput.value = 8; // Stel het maximaal toegestane aantal in
+    } else if (guestCountInput.value < 1) {
+        guestCountInput.value = 1; // Minimale waarde van 1 persoon
     }
 });
 
