@@ -87,8 +87,8 @@ $reserveringen = $allReserveringen->fetch_all(MYSQLI_ASSOC);
     </div>
     <a href="old_reserveringen.php">Alle reserveringen</a>
     <!-- Log uit knop -->
-    <form method="POST" class="text-center mt-3">
-        <button type="submit" name="logout" class="btn btn-danger">Log uit</button>
+    <form method="POST" action="logout.php" class="text-center mt-3">
+    <button type="submit" name="logout" class="btn btn-danger">Log uit</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
