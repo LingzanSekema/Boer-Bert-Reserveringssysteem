@@ -4,8 +4,8 @@ const reserveerKnop = document.getElementById("reserveer-knop");
 const formulierPopup = document.getElementById("formulier");
 const checkinInput = document.getElementById("check_in");
 const checkoutInput = document.getElementById("check_out");
-const phoneInput = document.getElementById("phone");
 const guestCountInput = document.getElementById("guest_count");
+const phoneInputField = document.getElementById("phone");
 
 // Stel de minimale datums in voor check-in en check-out velden
 function setMinDate() {
@@ -39,37 +39,6 @@ flatpickr("#check_out", {
     minDate: "today", // Start altijd vanaf vandaag
 });
 
-// Controleer of het telefoonnummer een geldig Nederlands nummer is
-function isValidDutchPhoneNumber(phone) {
-    // Telefoonnummer moet beginnen met '06'
-    if (!phone.startsWith("06")) {
-        alert("Het telefoonnummer moet beginnen met 06.");
-        return false;
-    }
-    // Telefoonnummer moet precies 10 cijfers bevatten
-    if (phone.length !== 10) {
-        alert("Het telefoonnummer moet precies 10 cijfers bevatten.");
-        return false;
-    }
-    // Controleer of het telefoonnummer alleen uit cijfers bestaat
-    if (isNaN(phone)) {
-        alert("Het telefoonnummer mag alleen uit cijfers bestaan.");
-        return false;
-    }
-    return true;
-}
-
-// Beperk de invoer van het telefoonnummer tot alleen cijfers en maximaal 10 cijfers
-phoneInput.addEventListener("input", function () {
-    // Verwijder niet-numerieke tekens
-    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
-
-    // Beperk de lengte tot 10 cijfers
-    if (phoneInput.value.length > 10) {
-        phoneInput.value = phoneInput.value.slice(0, 10);
-    }
-});
-
 // Controleer of het aantal personen maximaal 8 is
 guestCountInput.addEventListener("input", function () {
     if (guestCountInput.value > 8) {
@@ -80,9 +49,34 @@ guestCountInput.addEventListener("input", function () {
     }
 });
 
+// Functie om mobiele nummervalidatie te controleren op basis van land
+function isValidMobileNumber(countryCode, phoneNumber) {
+    const mobileNumberPatterns = {
+        "+31": /^(6|06)[0-9]{8}$/, // Nederland: moet beginnen met 06 of 6 en 10 cijfers in totaal
+        "+44": /^7[0-9]{9}$/,     // Verenigd Koninkrijk: moet beginnen met 7 en 10 cijfers in totaal
+        "+1": /^([2-9][0-9]{2})[2-9][0-9]{2}[0-9]{4}$/, // VS/Canada: valideer mobiel
+        "+49": /^1[5-7][0-9]{8}$/, // Duitsland: mobiel begint met 15, 16 of 17
+        // Voeg meer landen toe indien nodig
+    };
+
+    const pattern = mobileNumberPatterns[countryCode];
+    if (!pattern) {
+        alert("Geen specifieke mobiele validatie beschikbaar voor dit land.");
+        return true; // Geen specifieke validatie, accepteer nummer
+    }
+
+    return pattern.test(phoneNumber);
+}
+
+// Beperk invoer tot alleen cijfers in het telefoonnummer veld
+phoneInputField.addEventListener("input", function () {
+    phoneInputField.value = phoneInputField.value.replace(/[^0-9]/g, "");
+});
+
 // Voeg een eventlistener toe aan het formulier
 reservationForm.addEventListener("submit", function (event) {
-    const phone = phoneInput.value;
+    const phoneInput = phoneInputField.value;
+    const countryCode = document.getElementById("country-code").value;
     const checkin = document.getElementById("check_in").value;
     const checkout = document.getElementById("check_out").value;
 
@@ -93,9 +87,10 @@ reservationForm.addEventListener("submit", function (event) {
         return;
     }
 
-    // Controleer het telefoonnummer
-    if (!isValidDutchPhoneNumber(phone)) {
-        event.preventDefault(); // Blokkeer verzending bij fout
+    // Controleer of het telefoonnummer geldig is voor het geselecteerde land
+    if (!isValidMobileNumber(countryCode, phoneInput)) {
+        alert("Voer een geldig mobiel telefoonnummer in voor het geselecteerde land.");
+        event.preventDefault();
         return;
     }
 
@@ -112,12 +107,10 @@ reserveerKnop.addEventListener("click", function () {
     setMinDate(); // Stel de juiste minimale datums in bij openen
 });
 
-
 // Sluit formulier bij klikken op het kruisje
 document.getElementById('sluit-knop').addEventListener('click', function() {
     document.getElementById('formulier').style.display = 'none';
 });
-
 
 // Stel de minimale datum in bij het laden van de pagina
 setMinDate();

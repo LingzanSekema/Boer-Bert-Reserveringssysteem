@@ -40,7 +40,16 @@
                 <input type="text" id="lastname" name="lastname" placeholder="Bijv. Jansen" required>
             
                 <label for="phone">Telefoonnummer:</label>
-                <input type="text" id="phone" name="phone" placeholder="Bijv. 0612345678" required>
+                <div class="phone-input">
+                    <select id="country-code" name="country-code" required>
+                        <option value="+31" selected>🇳🇱 +31 (Nederland)</option>
+                        <option value="+32">🇧🇪 +32 (België)</option>
+                        <option value="+49">🇩🇪 +49 (Duitsland)</option>
+                        <option value="+44">🇬🇧 +44 (Verenigd Koninkrijk)</option>
+                        <option value="+1">🇺🇸 +1 (Verenigde Staten)</option>
+                    </select>
+                    <input type="text" id="phone" name="phone" placeholder="Bijv. 612345678" required>
+                </div>
             
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" placeholder="Bijv. jan.jansen@email.com" required>
