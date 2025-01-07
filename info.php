@@ -65,19 +65,6 @@ if (isset($_GET['id'])) {
                     <p><strong>Accommodatietype:</strong> <?php echo htmlspecialchars($reservering['accommodation_type']); ?></p>
                     <p><strong>Email:</strong> <?php echo htmlspecialchars($reservering['email']); ?></p>
                     <p><strong>Telefoon:</strong> <?php echo htmlspecialchars($reservering['phone']); ?></p>
-
-                    <!-- Incheck knop -->
-                    <form method="post" action="update_status.php" class="d-inline">
-                        <input type="hidden" name="id" value="<?php echo $reservering['id']; ?>">
-                        <input type="hidden" name="status" value="ingecheckt">
-                        <button type="submit" class="btn btn-success">Inchecken</button>
-                    </form>
-                    <!-- Uitcheck knop -->
-                    <form method="post" action="update_status.php" class="d-inline">
-                        <input type="hidden" name="id" value="<?php echo $reservering['id']; ?>">
-                        <input type="hidden" name="status" value="uitgecheckt">
-                        <button type="submit" class="btn btn-danger">Uitchecken</button>
-                    </form>
                 </div>
     </body>
 
