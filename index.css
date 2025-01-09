@@ -153,6 +153,65 @@ select:placeholder-shown {
     font-style: italic;
 }
 
+/* Container styling */
+.email-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    display: inline-block;
+    font-size: 1em;
+    color: #444;
+    margin-right: 10px;
+}
+
+/* Vraagteken styling */
+.info-icon {
+    display: inline-block;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #007BFF;
+    margin-left: 5px;
+}
+
+/* Input veld styling */
+input[type="email"] {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Info-box styling */
+.info-box {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 0.9em;
+    color: #333;
+    position: absolute;
+    top: 100%; /* Zorgt dat het vlak direct onder het inputveld verschijnt */
+    left: 0;
+    width: 100%;
+    display: none; /* Standaard verborgen */
+    z-index: 10;
+}
+
+.info-box.hidden {
+    display: none; /* Verborgen */
+}
+
+.info-box.visible {
+    display: block; /* Zichtbaar wanneer actief */
+}
+
 /* Knoppen */
 button {
     background-color: #38a169;

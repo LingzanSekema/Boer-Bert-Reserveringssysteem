@@ -70,6 +70,27 @@ phoneInput.addEventListener("input", function () {
     }
 });
 
+// Klik op het vraagteken voor het tonen/verbergen van de info-box
+document.getElementById("email-info-icon-question-mark").addEventListener("click", function () {
+    const infoBox = document.getElementById("email-info-box");
+    console.log("Info box gevonden:", infoBox); // Dit zorgt ervoor dat we kunnen zien of het element goed geselecteerd wordt
+
+    // Toggle de zichtbaarheid van de info-box
+    if (infoBox.style.display === "block") {
+        infoBox.style.display = "none"; // Verberg de info-box
+    } else {
+        infoBox.style.display = "block"; // Toon de info-box
+    }
+});
+
+// // Klik op het vraagteken voor het tonen/verbergen van de info-box
+// document.getElementById("email-info-icon").addEventListener("click", function () {
+//     const infoBox = document.getElementById("email-info-box");
+//     // Toggle de 'visible' class om de info-box te tonen of te verbergen
+//     infoBox.classList.toggle("visible");
+//     infoBox.classList.toggle("hidden");
+// });
+
 // Controleer of het aantal personen maximaal 8 is
 guestCountInput.addEventListener("input", function () {
     if (guestCountInput.value > 8) {
