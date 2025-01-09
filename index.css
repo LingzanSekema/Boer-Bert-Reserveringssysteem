@@ -154,41 +154,23 @@ select:placeholder-shown {
 }
 
 /* Container styling */
-.email-container {
+.input-container {
     position: relative;
     margin-bottom: 20px;
-}
-
-/* Label styling */
-label {
-    display: inline-block;
-    font-size: 1em;
-    color: #444;
-    margin-right: 10px;
-}
-
-/* Vraagteken styling */
-.info-icon {
+  }
+  
+  /* Vraagteken styling */
+  .info-icon {
     display: inline-block;
     font-size: 1.2em;
     cursor: pointer;
-    color: #007BFF;
+    color: #007bff;
     margin-left: 5px;
-}
-
-/* Input veld styling */
-input[type="email"] {
-    display: block;
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-/* Info-box styling */
-.info-box {
+    vertical-align: middle;
+  }
+  
+  /* Info-box styling */
+  .info-box {
     margin-top: 5px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -197,20 +179,20 @@ input[type="email"] {
     font-size: 0.9em;
     color: #333;
     position: absolute;
-    top: 100%; /* Zorgt dat het vlak direct onder het inputveld verschijnt */
+    top: 100%; /* Direct onder de input */
     left: 0;
-    width: 100%;
-    display: none; /* Standaard verborgen */
+    width: calc(100% - 20px); /* Past zich aan de breedte van de input aan */
     z-index: 10;
-}
-
-.info-box.hidden {
+    display: none; /* Verborgen standaard */
+  }
+  
+  .info-box.hidden {
     display: none; /* Verborgen */
-}
-
-.info-box.visible {
-    display: block; /* Zichtbaar wanneer actief */
-}
+  }
+  
+  .info-box.visible {
+    display: block; /* Zichtbaar */
+  }  
 
 /* Knoppen */
 button {

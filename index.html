@@ -42,12 +42,19 @@
                 <label for="phone">Telefoonnummer:</label>
                 <input type="text" id="phone" name="phone" placeholder="Bijv. 0612345678" required>
             
-                <label for="email">E-mail:
+                <label for="email">E-mail:</label>
+                <div class="input-container">
                     <span class="info-icon" id="email-info-icon-question-mark">❓</span>
-                </label>
-                <input type="email" id="email" name="email" placeholder="Bijv. jan.jansen@email.com" required>
-                <div class="info-box hidden" id="email-info-box">
-                    Voer een geldig e-mailadres in, zoals jan.jansen@email.com.
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Bijv. jan.jansen@gmail.com"
+                        required
+                    />
+                    <div class="info-box hidden" id="email-info-box">
+                        Voer een geldig e-mailadres in, zoals jan.jansen@gmail.com.
+                    </div>
                 </div>
                 
                 <label for="check_in">Check-in Datum:</label>
