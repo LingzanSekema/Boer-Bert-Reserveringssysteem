@@ -159,15 +159,20 @@ select:placeholder-shown {
     margin-bottom: 20px;
   }
   
-  /* Vraagteken styling */
-  .info-icon {
-    display: inline-block;
+/* Label met vraagteken naast elkaar */
+.email-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Ruimte tussen "E-mail" en het vraagteken */
+}
+
+/* Vraagteken styling */
+.info-icon {
     font-size: 1.2em;
     cursor: pointer;
-    color: #007bff;
-    margin-left: 5px;
+    color: #007bff; /* Blauwe kleur voor het vraagteken */
     vertical-align: middle;
-  }
+}
   
   /* Info-box styling */
   .info-box {
