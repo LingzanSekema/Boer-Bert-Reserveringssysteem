@@ -70,20 +70,34 @@ main {
 
 /* Info-box styling */
 .info-box {
-    background-color: #f0fff4;
-    border: 2px solid #38a169;
+    background-color: #f9f9f9;
+    border: 1px solid #007bff;
     border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    color: #2f855a;
-    font-size: 1.1em;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    font-size: 0.9em;
+    max-width: 100%;
+    width: 200px;  /* De breedte van de infovakken consistent maken */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    word-wrap: break-word;  /* Zorgt ervoor dat tekst niet afgebroken wordt midden in woorden */
+    white-space: normal;    /* Zorgt ervoor dat de tekst goed doorloopt */
+    margin-top: 5px;        /* Ruimte tussen het invoerveld en het infovak */
+    display: none; /* Verberg standaard */
+    position: absolute; /* Zet het infovak onder het invoerveld */
+    top: 100%; /* Plaats het onder het invoerveld */
+    left: 0;
 }
 
-.info-box p {
-    margin: 0;
-    line-height: 1.5;
+/* Wanneer je over het invoerveld hovert, maak dan extra ruimte voor de infobox */
+.input-container:hover {
+    margin-bottom: 60px; /* Verhoog de ruimte onder het veld als de infobox zichtbaar wordt */
+}
+
+/* Verander de infovakken in zichtbaar wanneer nodig met vertraging */
+.input-container:hover .info-box {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Geef een vertragingseffect */
 }
 
 /* Reserveringsformulier popup */
@@ -139,6 +153,13 @@ select {
     text-align: center;
 }
 
+/* Specifieke velden voor voornaam, achternaam, telefoonnummer en e-mail */
+input[type="text"].short,
+input[type="email"].short,
+input[type="number"].short {
+    width: 100%; /* Zorg ervoor dat deze velden ook een breedte van 100% krijgen */
+}
+
 /* Placeholder-styling */
 input::placeholder {
     color: #aaa; /* Lichtere tint grijs */
@@ -153,51 +174,59 @@ select:placeholder-shown {
     font-style: italic;
 }
 
-/* Container styling */
+/* Container styling voor invoervelden */
 .input-container {
     position: relative;
-    margin-bottom: 20px;
-  }
-  
-/* Label met vraagteken naast elkaar */
-.email-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px; /* Ruimte tussen "E-mail" en het vraagteken */
+    margin-bottom: 20px; /* Ruimte tussen velden */
+    transition: margin-bottom 0.3s ease-in-out; /* Voeg een overgangseffect toe voor de ruimte */
 }
 
-/* Vraagteken styling */
-.info-icon {
-    font-size: 1.2em;
-    cursor: pointer;
-    color: #007bff; /* Blauwe kleur voor het vraagteken */
-    vertical-align: middle;
+/* Label met vraagteken naast elkaar */
+.email-label,
+.phone-label,
+.check_in-label,
+.check_out-label,
+.guest_count-label,
+.accommodation_type-label,
+.firstname-label,
+.lastname-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Ruimte tussen label en vraagteken */
 }
-  
-  /* Info-box styling */
-  .info-box {
-    margin-top: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    font-size: 0.9em;
-    color: #333;
-    position: absolute;
-    top: 100%; /* Direct onder de input */
-    left: 0;
-    width: calc(100% - 20px); /* Past zich aan de breedte van de input aan */
-    z-index: 10;
-    display: none; /* Verborgen standaard */
-  }
-  
-  .info-box.hidden {
-    display: none; /* Verborgen */
-  }
-  
-  .info-box.visible {
-    display: block; /* Zichtbaar */
-  }  
+
+/* Algemene stijl voor de vraagteken-iconen */
+.info-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #007bff; /* Blauw voor het vraagteken */
+    margin-left: 5px;
+}
+
+/* Verberg de infovakken standaard */
+.info-box.hidden {
+    display: none;
+}
+
+/* Verander de infovakken in zichtbaar wanneer nodig */
+.info-box.visible {
+    display: block; /* Toon infovakken met class 'visible' */
+}
+
+/* Zorg ervoor dat de labels en invoervelden goed uitgelijnd zijn */
+label {
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding-right: 20px; /* Ruimte voor het vraagteken rechts */
+    position: relative;
+}
+
+/* De container voor de invoervelden en de infovakken */
+.input-container {
+    position: relative;
+    margin-bottom: 20px; /* Ruimte tussen velden */
+}
 
 /* Knoppen */
 button {
@@ -215,7 +244,6 @@ button {
 button:hover {
     background-color: #2f855a;
 }
-
 
 /* Footer */
 footer {

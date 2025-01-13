@@ -7,6 +7,19 @@ const checkoutInput = document.getElementById("check_out");
 const phoneInput = document.getElementById("phone");
 const guestCountInput = document.getElementById("guest_count");
 
+// Haal alle info-iconen op en voeg de hover functionaliteit toe
+document.querySelectorAll('.info-icon').forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        const infoBox = icon.nextElementSibling;
+        infoBox.classList.add('visible'); // Toon het infovak bij hover
+    });
+
+    icon.addEventListener('mouseleave', () => {
+        const infoBox = icon.nextElementSibling;
+        infoBox.classList.remove('visible'); // Verberg het infovak als je de muis beweegt
+    });
+});
+
 // Stel de minimale datums in voor check-in en check-out velden
 function setMinDate() {
     const today = new Date().toISOString().split("T")[0];
@@ -70,19 +83,6 @@ phoneInput.addEventListener("input", function () {
     }
 });
 
-document
-  .getElementById("email-info-icon-question-mark")
-  .addEventListener("click", function () {
-    const infoBox = document.getElementById("email-info-box");
-
-    // Toggle de zichtbaarheid van de info-box
-    if (infoBox.style.display === "block") {
-      infoBox.style.display = "none"; // Verberg de info-box
-    } else {
-      infoBox.style.display = "block"; // Toon de info-box
-    }
-  });
-
 // Controleer of het aantal personen maximaal 8 is
 guestCountInput.addEventListener("input", function () {
     if (guestCountInput.value > 8) {
@@ -125,12 +125,10 @@ reserveerKnop.addEventListener("click", function () {
     setMinDate(); // Stel de juiste minimale datums in bij openen
 });
 
-
 // Sluit formulier bij klikken op het kruisje
 document.getElementById('sluit-knop').addEventListener('click', function() {
     document.getElementById('formulier').style.display = 'none';
 });
-
 
 // Stel de minimale datum in bij het laden van de pagina
 setMinDate();

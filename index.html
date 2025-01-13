@@ -33,15 +33,60 @@
                 <span id="sluit-knop" class="sluit-knop">&times;</span>
                 <h2>Reserveringsformulier</h2>
             
-                <label for="firstname">Voornaam:</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Bijv. Jan" required>
-            
-                <label for="lastname">Achternaam:</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Bijv. Jansen" required>
-            
-                <label for="phone">Telefoonnummer:</label>
-                <input type="text" id="phone" name="phone" placeholder="Bijv. 0612345678" required>
-            
+                <!-- Voornaam -->
+                <label for="firstname" class="firstname-label">
+                    Voornaam:
+                    <span class="info-icon" id="firstname-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="firstname-info-box">
+                        Vul hier je voornaam in.
+                    </div>
+                </label>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="firstname"
+                        name="firstname"
+                        placeholder="Bijv. Jan"
+                        required
+                    />
+                </div>
+
+                <!-- Achternaam -->
+                <label for="lastname" class="lastname-label">
+                    Achternaam:
+                    <span class="info-icon" id="lastname-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="lastname-info-box">
+                        Vul hier je achternaam in.
+                    </div>
+                </label>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                        placeholder="Bijv. Jansen"
+                        required
+                    />
+                </div>
+
+                <!-- Telefoonnummer -->
+                <label for="phone" class="phone-label">
+                    Telefoonnummer:
+                    <span class="info-icon" id="phone-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="phone-info-box">
+                        Vul hier je telefoonnummer in (bijv. 0612345678).
+                    </div>
+                </label>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="Bijv. 0612345678"
+                        required
+                    />
+                </div>
+
                 <label for="email" class="email-label">
                     E-mail:
                     <span class="info-icon" id="email-info-icon-question-mark">❓</span>
@@ -57,25 +102,86 @@
                         placeholder="Bijv. jan.jansen@gmail.com"
                         required
                     />
-                </div>                                
-                
-                <label for="check_in">Check-in Datum:</label>
-                <input type="text" id="check_in" name="check_in" placeholder="Selecteer een datum" readonly required>
-            
-                <label for="check_out">Check-out Datum:</label>
-                <input type="text" id="check_out" name="check_out" placeholder="Selecteer een datum" readonly required>
-            
-                <label for="guest_count">Aantal Personen:</label>
-                <input type="number" id="guest_count" name="guest_count" min="1" placeholder="Bijv. 2" required>
-            
-                <label for="accommodation_type">Accommodatie Type:</label>
-                <select id="accommodation_type" name="accommodation_type" required>
-                    <option value="" disabled selected>Kies een optie</option>
-                    <option value="caravan">Caravan</option>
-                    <option value="tent">Tent</option>
-                    <option value="luxury_tent">Luxe Tent</option>
-                </select>
-            
+                </div>                
+
+                <!-- Check-in Datum -->
+                <label for="check_in" class="check-in-label">
+                    Check-in Datum:
+                    <span class="info-icon" id="check-in-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="check-in-info-box">
+                        Selecteer de datum waarop je incheckt.
+                    </div>
+                </label>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="check_in"
+                        name="check_in"
+                        placeholder="Selecteer een datum"
+                        readonly
+                        required
+                    />
+                </div>
+
+                <!-- Check-out Datum -->
+                <label for="check_out" class="check-out-label">
+                    Check-out Datum:
+                    <span class="info-icon" id="check-out-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="check-out-info-box">
+                        Selecteer de datum waarop je uitcheckt.
+                    </div>
+                </label>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="check_out"
+                        name="check_out"
+                        placeholder="Selecteer een datum"
+                        readonly
+                        required
+                    />
+                </div>
+
+                <!-- Aantal Personen -->
+                <label for="guest_count" class="guest-count-label">
+                    Aantal Personen:
+                    <span class="info-icon" id="guest-count-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="guest-count-info-box">
+                        Vul hier het aantal personen in.
+                    </div>
+                </label>
+                <div class="input-container">
+                    <input
+                        type="number"
+                        id="guest_count"
+                        name="guest_count"
+                        min="1"
+                        placeholder="Bijv. 2"
+                        required
+                    />
+                </div>
+
+                <!-- Accommodatie Type -->
+                <label for="accommodation_type" class="accommodation-type-label">
+                    Accommodatie Type:
+                    <span class="info-icon" id="accommodation-type-info-icon-question-mark">❓</span>
+                    <div class="info-box hidden" id="accommodation-type-info-box">
+                        Kies het type accommodatie.
+                    </div>
+                </label>
+                <div class="input-container">
+                    <select
+                        id="accommodation_type"
+                        name="accommodation_type"
+                        required
+                    >
+                        <option value="" disabled selected>Kies een optie</option>
+                        <option value="caravan">Caravan</option>
+                        <option value="tent">Tent</option>
+                        <option value="luxury_tent">Luxe Tent</option>
+                    </select>
+                </div>
+
                 <button type="submit" name="submit">Verzenden</button>
             </form>            
         </section>
