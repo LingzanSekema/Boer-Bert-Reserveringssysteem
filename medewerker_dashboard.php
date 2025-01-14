@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // Controleer of de gebruiker is ingelogd en de juiste rol heeft
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'medewerker') {
     header('Location: login.php');
