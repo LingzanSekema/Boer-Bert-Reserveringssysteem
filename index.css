@@ -75,7 +75,6 @@ main {
     border-radius: 8px;
     padding: 12px;
     font-size: 0.9em;
-    max-width: 100%;
     width: 200px;  /* De breedte van de infovakken consistent maken */
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     z-index: 1000;
@@ -88,16 +87,24 @@ main {
     left: 0;
 }
 
-/* Wanneer je over het invoerveld hovert, maak dan extra ruimte voor de infobox */
-.input-container:hover {
-    margin-bottom: 60px; /* Verhoog de ruimte onder het veld als de infobox zichtbaar wordt */
+/* Hover-effect op vraagteken */
+.info-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #007bff; /* Blauw voor het vraagteken */
+    margin-left: 5px;
 }
 
-/* Verander de infovakken in zichtbaar wanneer nodig met vertraging */
-.input-container:hover .info-box {
+/* Verander de infovakken in zichtbaar wanneer je over het vraagteken icoon hovert */
+.input-container .info-icon:hover + .info-box {
     display: block;
     opacity: 1;
     transition: opacity 0.3s ease-in-out; /* Geef een vertragingseffect */
+}
+
+/* Verhoog de ruimte onder het invoerveld als de infobox zichtbaar wordt */
+.input-container .info-icon:hover {
+    margin-bottom: 60px; /* Ruimte onder het invoerveld vergroten */
 }
 
 /* Reserveringsformulier popup */
@@ -178,7 +185,6 @@ select:placeholder-shown {
 .input-container {
     position: relative;
     margin-bottom: 20px; /* Ruimte tussen velden */
-    transition: margin-bottom 0.3s ease-in-out; /* Voeg een overgangseffect toe voor de ruimte */
 }
 
 /* Label met vraagteken naast elkaar */
