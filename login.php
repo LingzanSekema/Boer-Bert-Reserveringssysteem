@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
                 header("Location: $location");
                 exit;
             } else {
-                $error = "Onjuist wachtwoord.";
+                $error = "Onjuist wachtwoord."; 
             }
         } else {
             $error = "Gebruiker met dit e-mailadres bestaat niet.";
