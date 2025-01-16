@@ -1,6 +1,6 @@
 // Haal elementen op voor hergebruik
 const reservationForm = document.getElementById("reserveringsformulier");
-const reserveerKnop = document.getElementById("reserveer-knop");
+// const reserveerKnop = document.getElementById("reserveer-knop");
 const formulierPopup = document.getElementById("formulier");
 const checkinInput = document.getElementById("check_in");
 const checkoutInput = document.getElementById("check_out");
@@ -82,7 +82,7 @@ guestCountInput.addEventListener("input", function () {
 
 // Voeg een eventlistener toe aan het formulier
 reservationForm.addEventListener("submit", function (event) {
-    const phone = phoneInput.value;
+        const phone = phoneInput.value;
     const checkin = document.getElementById("check_in").value;
     const checkout = document.getElementById("check_out").value;
 
@@ -121,3 +121,6 @@ document.getElementById('sluit-knop').addEventListener('click', function() {
 
 // Stel de minimale datum in bij het laden van de pagina
 setMinDate();
+
+
+
