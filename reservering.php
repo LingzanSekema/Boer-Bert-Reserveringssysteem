@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         </section>
 
         <section id="formulier" class="form-popup">
-            <form action="reservering.php" method="POST" id="reserveringsformulier">
+            <form action="bevestiging.php" method="POST" id="reserveringsformulier">
                 <span id="sluit-knop" class="sluit-knop">&times;</span>
                 <h2>Reserveringsformulier</h2>
 

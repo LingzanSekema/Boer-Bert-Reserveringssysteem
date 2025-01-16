@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
         <label for="role">Rol:</label>
         <select id="role" name="role" required>
             <option value="bert">Boer Bert</option>
-            <option value="medewerker">Mederwerker</option>
+            <option value="medewerker">Medewerker</option>
         </select>
 
         <button type="submit" name="submit">Verzenden</button>

@@ -1,6 +1,6 @@
 // Haal elementen op voor hergebruik
 const reservationForm = document.getElementById("reserveringsformulier");
-const reserveerKnop = document.getElementById("reserveer-knop");
+// const reserveerKnop = document.getElementById("reserveer-knop");
 const formulierPopup = document.getElementById("formulier");
 const checkinInput = document.getElementById("check_in");
 const checkoutInput = document.getElementById("check_out");
