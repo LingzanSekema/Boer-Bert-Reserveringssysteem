@@ -49,7 +49,8 @@ $all_reserveringen = mysqli_fetch_all($result, MYSQLI_ASSOC);
             border-radius: 8px;
         }
 
-        .table td, .table th {
+        .table td,
+        .table th {
             padding: 12px;
             border: 1px solid #ddd;
         }
@@ -62,24 +63,30 @@ $all_reserveringen = mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
 
         .btn-back {
-            background-color: rgb(43, 114, 47); /* Groene achtergrondkleur */
+            background-color: rgb(43, 114, 47);
+            /* Groene achtergrondkleur */
             color: white;
             font-weight: bold;
-            border-radius: 25px; /* Ronde hoeken voor de knop */
-            padding: 12px 24px; /* Ruimte rondom de tekst */
+            border-radius: 25px;
+            /* Ronde hoeken voor de knop */
+            padding: 12px 24px;
+            /* Ruimte rondom de tekst */
             border: none;
-            transition: background-color 0.3s, transform 0.3s; /* Toevoegen van overgang voor hover effect */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Toevoegen van overgang voor hover effect */
         }
 
         .btn-back:hover {
-            background-color: #45a049; /* Donkerder groen bij hover */
-            transform: scale(1.05); /* Knop vergroot bij hover */
+            background-color: #45a049;
+            /* Donkerder groen bij hover */
+            transform: scale(1.05);
+            /* Knop vergroot bij hover */
         }
 
         .btn-back:focus {
-            outline: none; /* Verwijder de focus ring bij klikken */
+            outline: none;
+            /* Verwijder de focus ring bij klikken */
         }
-
     </style>
 
 </head>
@@ -88,14 +95,14 @@ $all_reserveringen = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <table class="table ">
         <thead>
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Phone</th>
+                <th>voornaam</th>
+                <th>Achternaam</th>
+                <th>Telefoonnummer</th>
                 <th>Email</th>
                 <th>Check in</th>
                 <th>Check out</th>
-                <th>Guest count</th>
-                <th>Accommidation type</th>
+                <th>Hoeveel personen</th>
+                <th>Accommodatie type</th>
 
             </tr>
         </thead>
@@ -120,9 +127,9 @@ $all_reserveringen = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </table>
 
     <div class="text-center mt-3">
-            <!-- Aangepaste groene knop -->
-            <a href="medewerker_dashboard.php" class="btn btn-back">Terug naar het dashboard</a>
-        </div>
+        <!-- Aangepaste groene knop -->
+        <a href="medewerker_dashboard.php" class="btn btn-back">Terug naar het dashboard</a>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

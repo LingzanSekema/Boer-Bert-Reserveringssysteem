@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'medewerker') {
+    header('Location: login.php');
+    exit();
+}
 require 'database.php';
 
 // Variabele voor een succesbericht
@@ -65,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-light" style="height: 100vh;"> 
+<body class="bg-light" style="height: 100vh;">
     <div class="d-flex justify-content-center align-items-start" style="height: 100%;">
         <div class="card shadow p-4 text-center" style="max-width: 400px; width: 100%; margin-top: 50px;">
             <div class="container d-flex justify-content-start align-items-start mt-3">
