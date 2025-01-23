@@ -69,7 +69,7 @@ $result->close();
 
         .card-body {
             background-color: #85C496; /* Frisse groene kleur voor de body van de kaart */
-            color: white;
+            color: black;
             border-radius: 10px;
             padding: 20px;
         }
