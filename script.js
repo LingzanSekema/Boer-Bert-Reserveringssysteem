@@ -56,6 +56,7 @@ function isValidMobileNumber(countryCode, phoneNumber) {
         "+44": /^7[0-9]{9}$/,     // Verenigd Koninkrijk: moet beginnen met 7 en 10 cijfers in totaal
         "+1": /^([2-9][0-9]{2})[2-9][0-9]{2}[0-9]{4}$/, // VS/Canada: valideer mobiel
         "+49": /^1[5-7][0-9]{8}$/, // Duitsland: mobiel begint met 15, 16 of 17
+        "+32": /^04[0-9]{8}$/,    // België: mobiel moet beginnen met 04 en 10 cijfers in totaal
         // Voeg meer landen toe indien nodig
     };
 
